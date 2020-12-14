@@ -1,0 +1,18 @@
+title = "Lux Villa"
+url = "/lux-villa"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Coconut\Images\Models\Instagram"
+identifierValue = "Luxe Villla"
+modelKeyColumn = "name"
+displayColumn = "images"
+notFoundMessage = "Record not found"
+==
+{% component 'builderDetails' %}
+
+
+<header id="layout-header">
+            {% partial 'site/header-coconut' %}
+</header>

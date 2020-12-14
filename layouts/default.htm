@@ -1,0 +1,164 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+       <!-- fonts-->
+       <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet"> 
+       <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+       <!--endFonts-->
+        <script src="https://kit.fontawesome.com/7bc84cbffb.js" crossorigin="anonymous"></script>
+
+        <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/header.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/footer.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/donate.css'|theme }}" rel="stylesheet">
+        {% styles %}
+    </head>
+    <body id="body">
+      <div class="outer-wrapper">
+        
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+      </div>
+      
+      <script>
+        function nav(){
+          if(document.getElementById("ul-id").style.display=="none"){
+             document.getElementById("ul-id").style.display = "block";
+          }
+          else{
+              document.getElementById("ul-id").style.display = "none";
+          }
+         }
+        
+   var co = document.getElementById("coconut-btn");
+   var go =document.getElementById("gold-btn"); 
+   var lu =document.getElementById("lux-btn");       
+       function coconut(){
+           co.style.border="solid 1px #19181A";
+           go.style.border="none";
+           lu.style.border="none";
+       }
+       function gold(){
+           go.style.border="solid 1px #19181A";
+           co.style.border="none";
+           lu.style.border="none";
+       }
+       function lux(){
+           lu.style.border="solid 1px #19181A";
+           go.style.border="none";
+           co.style.border="none";
+       }  
+
+var youtube = "//www.youtube.com/embed/BV5E33decI0?autoplay=1&rel=0"          
+function modal_open(e){
+    document.getElementById("body").classList.add("show-video-modal");
+    document.getElementById("body").classList.add("noscroll");
+    document.getElementById("youtube").src = e;
+}          
+function close_modal(){
+    document.getElementById("body").classList.remove("show-video-modal");
+    document.getElementById("body").classList.remove("noscroll");
+    
+    document.getElementById("youtube").src = "";
+}          
+          
+          
+ /* $(document).ready(function(){
+
+
+	/* Toggle Video Modal
+  -----------------------------------------*/
+	/* function toggle_video_modal() {
+	    
+	    // Click on video thumbnail or link
+	    $(".js-trigger-video-modal").on("click", function(e){
+          
+          // prevent default behavior for a-tags, button tags, etc. 
+	        e.preventDefault();
+        
+          // Grab the video ID from the element clicked
+          var id = $(this).attr('data-youtube-id');
+
+          // Autoplay when the modal appears
+          // Note: this is intetnionally disabled on most mobile devices
+          // If critical on mobile, then some alternate method is needed
+          var autoplay = '?autoplay=1';
+
+          // Don't show the 'Related Videos' view when the video ends
+          var related_no = '&rel=0';
+
+          // String the ID and param variables together
+          var src = '//www.youtube.com/embed/'+id+autoplay+related_no;
+          
+          // Pass the YouTube video ID into the iframe template...
+          // Set the source on the iframe to match the video ID
+          $("#youtube").attr('src', src);
+          
+          // Add class to the body to visually reveal the modal
+          $("body").addClass("show-video-modal noscroll");
+	    
+      });
+
+	    // Close and Reset the Video Modal
+      function close_video_modal() {
+        
+        event.preventDefault();
+
+        // re-hide the video modal
+        $("body").removeClass("show-video-modal noscroll");
+
+        // reset the source attribute for the iframe template, kills the video
+        $("#youtube").attr('src', '');
+        
+      }
+      // if the 'close' button/element, or the overlay are clicked 
+	    $('body').on('click', '.close-video-modal, .video-modal .overlay', function(event) {
+	        
+          // call the close and reset function
+          close_video_modal();
+	        
+      });
+      // if the ESC key is tapped
+      $('body').keyup(function(e) {
+          // ESC key maps to keycode `27`
+          if (e.keyCode == 27) { 
+            
+            // call the close and reset function
+            close_video_modal();
+            
+          }
+      });
+	}
+	toggle_video_modal();
+
+
+
+}); */
+        </script> 
+    </body>
+</html>

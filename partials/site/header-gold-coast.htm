@@ -1,0 +1,69 @@
+<header class="main-header">
+   <div class="fixed-sidebar">
+       <div class="sidebar-padding">
+           <div class="logo">
+              <a href="{{ 'home'|page }}">
+                  <img src="/OctoberCms/install-master/storage/app/media/logo-o.jpg"/>
+              </a>
+           </div>
+           <div class="nav" role="navigation">
+                <button id="toggle" class="burger" onclick="nav()"><i id="open" class="fas fa-bars"></i><i id="close" style="display:none;" class="closed fas fa-times"></i></button>
+               <ul id="ul-id">
+                   <li class="menu-item">
+                       <a href="{{ 'under-coconut-tree'|page }}">
+                         Under the Coconut Tree  
+                       </a>
+                   </li>
+                   <li class="menu-item">
+                       <a href="{{ 'gold-coast'|page }}">
+                         Gold Coast  
+                       </a>
+                   </li>
+                   <li class="menu-item">
+                       <a href="{{ 'lux-villa'|page }}">
+                         Lux Villa 
+                       </a>
+                   </li>
+                   <div class="text-center room-btn">
+                    <a href="{{ 'rooms'|page }}" class="button">FIND ROOMS</a>
+             </div>   
+               </ul>
+           </div>
+        <!--   <div class="booking-widget">
+               <form>
+                   <div>
+                       <label>Check In</label>
+                       <br>
+                       <input name="check_in_date" type="date" id="today">
+                   </div>
+                   <div>
+                       <label>Nights</label>
+                       <br>
+                       <input name="number_nights" placeholder="Number Of Nights" type="number" min="1" value="1">
+                   </div>
+                   <div>
+                       <label>Adults</label>
+                       <br>
+                       <input name="number_of_adults" type="number" valu="1"  max="7" min="1">
+                   </div>
+                   <button type="submit">Find Rooms</button>
+               </form>
+             </div> -->
+             <div class="social-header">
+                <a href="https://www.instagram.com/coconuttreehoian/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/UnderTheCoconutTree"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="tripadvisor">
+                <div class="trip-border">
+                    <a href="https://www.tripadvisor.com/Hotel_Review-g298082-d12596384-Reviews-An_Bang_Gold_Coast_Villa-Hoi_An_Quang_Nam_Province.html">
+                       <img src="https://www.tripadvisor.com/img/cdsi/img2/awards/v2/coe-14348-2.png" al="tripadvisor"> 
+                    </a>
+                </div>
+            </div>
+            <div class="text-center donate-nav">
+                      <a href="{{ 'donate'|page }}" class="donate border">Our Donation Program</a>
+            </div>
+       </div>
+   </div>
+    
+</header>

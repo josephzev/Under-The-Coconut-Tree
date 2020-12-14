@@ -1,0 +1,140 @@
+title = "home"
+url = "/"
+layout = "default"
+is_hidden = 0
+==
+<!-- Header -->
+        <header id="layout-header">
+            {% partial 'site/header' %}
+        </header>
+        
+<div class="right-column">
+    <main role="main">
+        <section class="welcome">
+            <div class="welcome-img">
+               
+                   <img src="/OctoberCms/install-master/storage/app/media/sea.jpg"/>
+    
+                <div class="welcome-text-container">
+                    <div class="welcome-text">
+                        <span class="strong">Welcome to Hoi An Beachside Accomodation </span>
+                        <span class="paradise">"Paradise."</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+     <!--   <section class="acc-selector">
+            <div class="choose">
+                Choose From Our Homes
+            </div>
+            <div class="flex flex-align-start">
+                <div class="flex-33">
+                    <div class="acc-container">
+                       <a href="{{ 'under-coconut-tree'|page }}">
+                        <p>Hostel</p>
+                            <img class="acc-img" href src="/OctoberCms/install-master/storage/app/media/coconut-bbq.jpg"/>
+                        <p>Under the Coconut Tree</p>
+                       </a>
+                    </div>
+                </div>
+                <div class="flex-33">
+                    <div class="acc-container">
+                       <a href="{{ 'gold-coast'|page }}">
+                        <p>Boutique Hotel</p>
+                            <img>
+                        <p>Gold Coast</p>
+                       </a>
+                    </div>
+                </div>
+                <div class="flex-33">
+                    <div class="acc-container">
+                       <a href="{{ 'lux-villa'|page }}">
+                        <p>Private Villa</p>
+                            <img class="acc-img" href src=>
+                        <p>Lux Villa</p>
+                       </a>
+                    </div>
+                </div>
+            </div>
+        </section>   -->
+        <section class="homes">
+        <img class="homes-img" src="/OctoberCms/install-master/storage/app/media/water.jpg"/>
+           <div class="choose">
+                Choose From Our Homes
+            </div>
+            <a href="{{ 'under-coconut-tree'|page }}">
+             <div class="homes-container coconut">
+               <img class="homes-container-img" src="/OctoberCms/install-master/storage/app/media/waves.jpg"/>
+                <div class="homes-text">
+                    <h2>Under The<br>Coconut<br>Tree</h2>
+                </div>
+                <div class="slide">
+                   <div class="slide-images">
+                        <img src="/OctoberCms/install-master/storage/app/media/coconut-activities.jpg"/>
+                        <img src="/OctoberCms/install-master/storage/app/media/coconut-bbq.jpg"/>
+                   </div>
+                </div>
+                <div class="review">
+                    <p>"Cosy Atmosphere<br> With A Tropical Feel,<br> Your Choice of<br> Dorm or Bungalow"</p>
+                </div>
+             </div>
+            </a>
+            <a href="{{ 'gold-coast'|page }}">
+             <div class="homes-container gold-coast">
+               <img class="homes-container-img" src="/OctoberCms/install-master/storage/app/media/waves.jpg"/>
+                <div class="slide">
+                   <div class="slide-images">
+                        <img src="/OctoberCms/install-master/storage/app/media/gold-insta3.jpg"/>
+                        <img src="/OctoberCms/install-master/storage/app/media/gold-insta6.jpg"/>
+                   </div>
+                </div>
+                <div class="review">
+                    <p>"Buotiqe Hotel,<br> In the Perfect Location"</p>
+                </div>
+                <div class="homes-text">
+                    <h2>Gold<br>Coast</h2>
+                </div>
+             </div>
+            </a>
+            <a href="{{ 'lux-villa'|page }}">
+              <div class="homes-container lux">
+               <img class="homes-container-img" src="/OctoberCms/install-master/storage/app/media/waves.jpg"/>
+                <div class="homes-text">
+                    <h2>Lux<br>Villa</h2>
+                </div>
+                <div class="slide">
+                   <div class="slide-images">
+                        <img src="/OctoberCms/install-master/storage/app/media/lux-house.jpg"/>
+                        <img src="/OctoberCms/install-master/storage/app/media/lux-pool.jpg"/>
+                   </div>
+                </div>
+                <div class="review">
+                    <p>"Beautiful Private Villa,<br> Tucked into the Beachside"</p>
+                </div>
+             </div>
+          </a>
+        </section>
+        <!--  <section class="mobile-container">
+            <div class="booking-widget">
+              <form>
+                   <div>
+                       <label>Check In</label>
+                       <br>
+                       <input name="check_in_date" type="date" id="today">
+                   </div>
+                   <div>
+                       <label>Nights</label>
+                       <br>
+                       <input name="number_nights" placeholder="Number Of Nights" type="number" min="1" value="1">
+                   </div>
+                   <div>
+                       <label>Adults</label>
+                       <br>
+                       <input name="number_of_adults" type="number" valu="1"  max="7" min="1">
+                   </div>
+                   <button type="submit">Find Rooms</button>
+               </form>
+            </div>
+        </section> -->
+    </main>
+</div>

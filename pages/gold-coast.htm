@@ -1,0 +1,123 @@
+title = "Gold Coast"
+url = "/gold-coast"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Coconut\Images\Models\Instagram"
+identifierValue = "Gold Coast"
+modelKeyColumn = "name"
+displayColumn = "images"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+
+
+
+
+<header id="layout-header">
+            {% partial 'site/header-gold-coast' %}
+</header>
+        
+<section class="video-modal" >
+          <div class="video-modal-content" id=video-modal-content>
+            <iframe 
+          id="youtube" 
+          width="100%" 
+          height="100%" 
+          frameborder="0" 
+          allow="autoplay" 
+          allowfullscreen 
+          src=''>   
+            </iframe>
+            <a 
+        	href="#" 
+        	class="close-video-modal" onclick="close_modal()" >
+        <!-- x icon-->       
+        	    <svg 
+            version="1.1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0"
+            y="0"
+            viewBox="0 0 32 32" 
+            style="enable-background:new 0 0 32 32;" 
+            xml:space="preserve" 
+            width="24" 
+            height="24" 
+          >
+
+            <g id="icon-x-close">
+                <path fill="#ffffff" d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z" id="Shape"></path>
+                <path fill="#ffffff" d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z" id="Shape"></path>
+              </g>
+              </svg>
+        	</a>
+          </div>
+    <!-- clickable overlay element -->
+          <div onclick="close_modal()" class="overlay"></div>
+</section>
+
+<div class="right-column">
+    <main role="main">
+        <section class="welcome">
+            <div class="welcome-img">
+                <img style="mix-blend-mode: lighten; opacity: 1;" src="/OctoberCms/install-master/storage/app/media/gold-background.jpg"/>
+            </div>
+            <div class="light"><div></div></div>
+        </section>
+        <section class="rooms-preview section-padding">
+            <div class="flex-rooms flex-align-center">
+                <div class="flex-50">
+                    <div class="text-container">
+                        <h1>Welcome to Gold Coast</h1>
+                        <p>The perfect place to relax and escape the busy lifestyle that Vietnam offers. We provide a Bamboo Beach hut experience, a literal two minute walk from the beach with a great choice of restaurants and bars which regularly offer live music and always have great food for you too enjoy as well as a colourful burst of culture. Our Home stay provides a great atmosphere and setting for backpackers, holiday makers and families to relax and enjoy the postcard beach that we call our back garden.</p>
+                        <a href="{{ 'rooms'|page }}/2" class="button">View Rooms/Book Now</a>
+                    </div>
+                </div>
+                <div class="flex-50">
+                    <img style="width:80%;" src="/OctoberCms/install-master/storage/app/media/gold-single-room.jpg"/>
+                    <div class="video-text">
+                        <button style="color:#D79922;" class="js-trigger-video-modal" id="js-trigger-video-modal" onclick="modal_open('//www.youtube.com/embed/BV5E33decI0?autoplay=1&rel=0')"
+                        data-youtube="//www.youtube.com/embed/BV5E33decI0?autoplay=1&rel=0">Watch<br> Gold <br>Video</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+       <!-- <section class="welcome">
+            <div class="welcome-img">
+                <img src="/OctoberCms/install-master/storage/app/media/coconut-poster.jpg"/>
+            </div>
+        </section> -->
+        <section class="instagram">
+            <div class="instagram-wrapper">
+                <div class="text-center">
+                    <h4>
+                        <a href="https://www.instagram.com/coconuttreehoian/">@GoldCoast <i class="fab fa-instagram"></i></a>
+                    </h4>
+                </div>
+         <!--images-->
+                {% if record %}
+                <a href="https://www.instagram.com/coconuttreehoian/">
+                 <div class="flex-instagram">
+                 
+                 
+                 {% for image in record.images %}
+                   
+                   <img src="{{image.thumb(100,auto)}}">
+                   
+                     {% endfor %}
+                     
+                    {% else %}
+                    {{ notFoundMessage }}
+                    {% endif %}
+                </div>
+                </a>
+            </div>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,161 @@
+title = "Rooms"
+url = "/rooms/:page?"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Coconut\Images\Models\Instagram"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 1
+pageNumber = "{{ :page }}"
+==
+<!-- Header -->
+<header id="layout-header">
+            {% partial 'site/header' %}
+</header>
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+    {% for record in records %}
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+
+            {% endspaceless %}
+            
+<div class="right-column ">
+ <div class="main">
+    <section class="rooms-top">
+        <div class="text-center">
+            <h2> Rooms </h2>
+        </div>
+        <div class="switch">
+            <button class="first-btn" onclick="coconut()" id="coconut-btn" ><a href="{{ this.page.baseFileName|page({ (pageParam): 1 }) }}">{{ page }}COCONUT</a></button>
+            <button onclick="gold()" id="gold-btn"><a href="{{ this.page.baseFileName|page({ (pageParam): 2 }) }}">{{ page }}GOLD COAST</a></button>
+            <button onclick="lux()" id="lux-btn"><a href="{{ this.page.baseFileName|page({ (pageParam): 3 }) }}">{{ page }}LUX VILLA</a></button>
+        </div>
+    </section>
+    <section class="rooms-view">
+        <section class="rooms-coconut">
+            <!--first room-->
+             
+              {% for room in record.first_room %}
+
+               <div class="views-row">
+                   <div class="rooms-details">
+                       <div class="left-side">
+                           <h3>{{room.first_name}}</h3>
+                           <div class="img-container"><img src="{{record.first_image.thumb(400,auto)}}"/></div>
+                       </div>
+                       <div class="center-side">
+                           <div class="row">
+                               <p>{{room.first_description}}</p> 
+                           </div>
+                       </div>
+                       <div class="right-side">
+                           <div class="row">
+                               <span>Price per Night:</span>
+                           </div>
+                               <div class="row price">  <span>{{room.first_price}}</span>
+                               </div>
+                           
+                           <div class="row ">
+                               <span>Book With:</span>
+                           </div>
+                             <div class="booking-link">
+                               <a href="{{record.booking}}" class="booking">Booking</a>
+                               <a href="{{record.agoda}}"class="agoda">Agoda</a>
+                            </div>
+                       </div>
+                       
+                   </div>
+               </div>
+               
+               {% endfor %}
+               
+               <!--second room-->
+               {% for room in record.second_room %}
+
+               <div class="views-row">
+                   <div class="rooms-details">
+                       <div class="left-side">
+                           <h3>{{room.second_name}}</h3>
+                           <div class="img-container"><img src="{{record.second_image.thumb(400,auto)}}"/></div>
+                       </div>
+                       <div class="center-side">
+                           <div class="row">
+                               <p>{{room.second_description}}</p> 
+                           </div>
+                       </div>
+                       <div class="right-side">
+                           <div class="row">
+                               <span>Price per Night:</span>
+                           </div>
+                               <div class="row price">  <span>{{room.second_price}}</span>
+                               </div>
+                           
+                           <div class="row ">
+                               <span>Book With:</span>
+                           </div>
+                              <div class="booking-link">
+                               <a href="{{record.booking}}" class="booking">Booking</a>
+                               <a href="{{record.agoda}}"class="agoda">Agoda</a>
+                            </div>
+                       </div>
+                       
+                   </div>
+               </div>
+               
+               {% endfor %}
+               
+               <!--third room-->
+               {% for room in record.third_room %}
+                {% if room.third_name %}
+                
+               <div class="views-row">
+                   <div class="rooms-details">
+                       <div class="left-side">
+                           <h3>{{room.third_name}}</h3>
+                           <div class="img-container"><img src="{{record.third_image.thumb(400,auto)}}"/></div>
+                       </div>
+                       <div class="center-side">
+                           <div class="row">
+                               <p>{{room.third_description}}</p> 
+                           </div>
+                       </div>
+                       <div class="right-side">
+                           <div class="row">
+                               <span>Price per Night:</span>
+                           </div>
+                               <div class="row price">  <span>{{room.third_price}}</span>
+                               </div>
+                           
+                           <div class="row ">
+                               <span>Book With:</span>
+                           </div>
+                              <div class="booking-link">
+                               <a href="{{record.booking}}" class="booking">Booking</a>
+                               <a href="{{record.agoda}}"class="agoda">Agoda</a>
+                            </div>
+                       </div>
+                       
+                   </div>
+               </div>
+               {% endif %}
+               {% endfor %}
+               {% endfor %}
+               
+        </section>
+    </section>
+ </div>
+</div>                   
+            
+
